@@ -14,21 +14,27 @@ if (!$conn) {
 }
 
  // LOGIN USER
-if (isset($_POST['login_user'])) {
+//if (isset($_POST['login_user'])) {
   //$firstname = mysqli_real_escape_string($db, $_POST['firstname']);
   //$lastname = mysqli_real_escape_string($db, $_POST['lastname']);
-  $email = mysqli_real_escape_string($link, $_POST['email']);
-  $password = mysqli_real_escape_string($link, $_POST['password']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $password = mysqli_real_escape_string($conn, $_POST['password']);
  
   	//$password = md5($password);
   	
-  $query = "SELECT * FROM users WHERE email='$email' AND password = '$password'";
+  $query = "SELECT * FROM Users WHERE email='$email' AND password = '$password'";
   $results = mysqli_query($conn, $query);
   if (mysqli_num_rows($results) == 1) {
-  	 echo "It exists";
+    while($row = mysqli_fetch_assoc($result)) {
+      $_SESSION["FIRSTNAME"] =  $row["firstname"];
+      $_SESSION["LASTNAME"] = $row["lastname"];
+      $_SESSION["EMAIL"] = $row["email"];
+  }
+    readfile("../success.php");
+  	 //echo "It exists";
   	}else {
-  		echo "Wrong password/email";
-  	}
+  		readfile("../failure.html");
+//  	}
 }
 
 $conn->close();

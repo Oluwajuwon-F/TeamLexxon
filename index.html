@@ -4,27 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>LEXXON</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/style.css">
-    <style>
-
-    </style>
+            <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="login-container container">
             <div class="row">
                 <div class="col-md-6 login-details">
-                    <form action="" method="post">
+                    <form action="php/verify.php" method="post">
                         <div class="title">
                             <h2>We are <span class="lex">LEXXON</span></h2>
                             <p>Welcome back, Login to your Account</p>
                         </div>
                         <div class="form-group form-input">
-                            <input type="email" class="form-control" id="email-field" placeholder="Email*" required>
-                            <input type="password" class="form-control" id="password-field" placeholder="Password*" required>
+                            <input type="email" class="form-control" id="email-field" placeholder="Email*" name="email" required>
+                            <input type="password" class="form-control" id="password-field" placeholder="Password*" name="password" required>
                         </div>
                         <div class="form-group form-check checked">
                             <input class="form-check-input checking" type="checkbox" name="Remember me" id="remember">
@@ -35,7 +33,7 @@
                             <button id="btn"> Login </button>
                         </div>
                         <div class="sign-up text-center">
-                            <p>Not a memeber ? <span class="sign">Sign Up</span> </p>
+                            <p>Not a memeber ? <a href="signup.html"><span class="sign">Sign Up</span></a></p>
                         </div>
                     </form> 
                 </div>
